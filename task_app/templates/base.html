@@ -10,6 +10,8 @@
 
         <!-- Load Stile -->
         <link rel="stylesheet" href="{% static 'stylesheet/min.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'stylesheet/style.css' %}" type="text/css" />
+
 
         <!-- Meta SEO -->
 		<meta name="keyword" content="" />
@@ -77,10 +79,43 @@
                         </ul>
                     </nav>
                 </div>
-                {% include "task.html" %}
-                {% block task %}
                 
-                {% endblock task %}
+                <div class="col-xl-11 col-sm-10">
+                    <div class="main-content">
+                        <header class="header-content">
+                            <ul class="list list-inline">
+                                <li>
+                                    <a href="" title="">
+                                        <span class="state red"></span>
+                                        <span>Task</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <span class="state yellow"></span>
+                                        <span>Story</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <span class="state green"></span>
+                                        <span>Bug</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="action">
+                                <a href="" title="">New Task </a>
+                                <button class="btn btn-blue">New Board <span class="flaticon-add"></span></button>
+                            </div>
+                        </header>
+                        <div class="dashboard">
+                            {% block task %}
+                
+                            {% endblock task %}
+                            
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
