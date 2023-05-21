@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US" >
+    <head>
+        <meta charset="UTF-8" />
+        <title> Task </title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Load Stile -->
+        <link rel="stylesheet" href="{% static 'stylesheet/min.css' %}" type="text/css" />
+
+        <!-- Meta SEO -->
+		<meta name="keyword" content="" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<link rel="canonical" href="" />
+		
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header id="main-header">
+            <div class="account">
+                <figure>
+                    <div class="avatar">
+                        <img src="Assets/images/avatar/man/23.jpg" alt="" class="w-100 h-100">
+                        <div class="effect"></div>
+                    </div>
+                    <figcaption>
+                        <h2 class="text-md">Mohammad Rahmani</h2>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="search">
+                <span class="icon flaticon-search color-fff"></span>
+                <input type="text" placeholder="Search" name="search" id="search">
+            </div>
+        </header>
+        <!-- End Header -->
+		
+        <!-- Start Main Content -->
+        <section class="container-fluid no-padding">
+            <div class="row wrapper no-padding">
+                <div class="col-xl-1 col-sm-2">
+                    <nav class="menu-left">
+                        <ul class="list">
+                            <li>
+                                <a href="#" title="">
+                                    <span class="icon flaticon-home"></span>
+                                    <span class="text">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="" class="active">
+                                    <span class="icon flaticon-notepad-1"></span>
+                                    <span class="text">Tasks</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">
+                                    <span class="icon flaticon-settings-5"></span>
+                                    <span class="text">Settings</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">
+                                    <span class="icon flaticon-power"></span>
+                                    <span class="text">Exit</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                {% include "task.html" %}
+                {% block task %}
+                
+                {% endblock task %}
+
+            </div>
+        </section>
+        <!-- End Main Content-->
+		
+		<!-- Start Footer -->
+		<footer>
+			
+		</footer>
+		<!-- End Footer -->
+
+        <!-- Start Script -->
+        <script src="{% static 'javascript/min.js' %}"></script>
+    </body>
+</html>

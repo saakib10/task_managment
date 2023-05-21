@@ -1,0 +1,65 @@
+
+<div class="col-xl-11 col-sm-10">
+    <div class="main-content">
+        <header class="header-content">
+            <ul class="list list-inline">
+                <li>
+                    <a href="" title="">
+                        <span class="state red"></span>
+                        <span>Task</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <span class="state yellow"></span>
+                        <span>Story</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="">
+                        <span class="state green"></span>
+                        <span>Bug</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="action">
+                <a href="" title="">New Task </a>
+                <button class="btn btn-blue">New Board <span class="flaticon-add"></span></button>
+            </div>
+        </header>
+        <div class="dashboard">
+            <div class="row">
+                {% for st in status %}
+                <div class="col-xl-2 col-sm-6">
+                    <article class="board red">
+                        <header>
+                            <h4>{{ st.title }} <span></span></h4>
+                            <span class="icon flaticon-more-1"></span>
+                        </header>
+                        <div class="board-content">
+                            <ul class="list">
+                                {% for task in tasks %}
+                                    {% if task.status.title == st.title %}
+                                        <li class="el">
+                                            <div class="task blue">
+                                                <header>
+                                                    <h3>{{ task.title }}</h3>
+                                                    <span class="icon flaticon-link"></span>
+                                                </header>
+                                                <div class="task-content">
+                                                    {{ task.details }}
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
