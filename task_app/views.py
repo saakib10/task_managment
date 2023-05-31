@@ -10,5 +10,10 @@ def home_page_render(request):
     contex = {"tasks" : task, "status" : status }
     return (render(request,'task.html',contex))
 
-def details(request):
-    return (render(request,'details.html'))
+def view_details(request,id):
+    task = Task.objects.get(pk = id)
+    contex = {'task' : task }
+    return (render(request,'details.html', contex))
+
+def list_view(request):
+    return (render(request,'task_list.html'))
