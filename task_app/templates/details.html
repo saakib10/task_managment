@@ -1,56 +1,118 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block task %}
-<div class="container">
-    <div class="content">
-        <div class="testbox">
-            <form action="/">
-              <h1>Bank Customer Feedback Form</h1>
-              <h4>Type of Feedback<span>*</span></h4>
-              <select>
-                <option value=""></option>
-                <option value="">Enquiry</option>
-                <option value="2">Complaint</option>
-                <option value="3">Compliment</option>
-                <option value="4">Suggestion</option>
-              </select>
-              <h4>Feedback/Enquiry on<span>*</span></h4>
-              <select>
-                <option value=""></option>
-                <option value="1">Credit and Debit Cards</option>
-                <option value="2">Deposit</option>
-                <option value="3">Housing and Renovation Loan</option>
-                <option value="4">iBanking</option>
-                <option value="5">Treasures</option>
-              </select>
-              <h4>Name<span>*</span></h4>
-              <div class="title-block">
-                <select>
-                  <option value="title" selected>Title</option>
-                  <option value="ms">Ms</option>
-                  <option value="miss">Miss</option>
-                  <option value="mrs">Mrs</option>
-                  <option value="mr">Mr</option>
-                </select>
-                <input class="name" type="text" name="name" placeholder="First" />
-                <input class="name" type="text" name="name" placeholder="Last" />
-              </div>
-              <h4>Email Address<span>*</span></h4>
-              <input type="text" name="name" />
-              <h4>Contact Number<span>*</span></h4>
-              <input type="text" name="name"/>
-              <h4>Name of Staff who served me</h4>
-              <input type="text" name="name"/>
-              <h4>Branch visited</h4>
-              <input type="text" name="name"/>
-              <h4>Feedback/Enquiry</h4>
-              <p class="small">Please do not indicate your account or credit card number and banking instruction in your comments. Thank you for your time and valuable feedback.</small>
-                <textarea rows="5"></textarea>
-              <div class="btn-block">
-                <button type="submit" href="/">Send Feedback</button>
-              </div>
-            </form>
-          </div>
+<form action='' class='form'>
+    <p class='field required'>
+        <label class='label required' for='name'>Title</label>
+        <input class='text-input' id='name' name='name' required type='text' value='{{ task.title }}'>
+    </p>
+    <p class='field half'>
+        <label class='label' for='select'>Project</label>
+        <select class='select' id='select'>
+            <option selected value='{{ task.project }}'>{{ task.project }}</option>
+            <option value='ceo'>CEO</option>
+            <option value='front-end'>Front-end developer</option>
+            <option value='back-end'>Back-end developer</option>
+        </select>
+    </p>
+    <p class='field half'>
+        <label class='label' for='select'>Status</label>
+        <select class='select' id='select'>
+            <option selected value='{{ task.status }}'>{{ task.status }}</option>
+            <option value='ceo'>CEO</option>
+            <option value='front-end'>Front-end developer</option>
+            <option value='back-end'>Back-end developer</option>
+          </select>
+        </p>
+      <p class='field'>
+          <label class='label' for='about'>Details</label>
+          <textarea class='textarea' cols='50' id='about' name='about' rows='4' value="sasa">{{ task.details }}</textarea>
+      </p>
+    </p>
+    <p class='field half'>
+      <label class='label' for="birthdaytime">Creation {{ task.creation }}</label>
+      <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+    </p>
+  </p>
+  <p class='field half'>
+      <label class='label' for="birthdaytime">Deadline</label>
+      <input type="datetime-local" id="birthdaytime" name="birthdaytime" value="popop">
+  </p>
+      
+    <!-- <p class='field half required error'>
+        <label class='label' for='login'>Login</label>
+        <input class='text-input' id='login' name='login' required type='text' value='mican'>
+    </p>
+    <p class='field half required'>
+      <label class='label' for='password'>Password</label>
+      <input class='text-input' id='password' name='password' required type='password'>
+    </p>
+    <div class='field'>
+        <label class='label'>Sport?</label>
+        <ul class='checkboxes'>
+            <li class='checkbox'>
+                <input class='checkbox-input' id='choice-0' name='choice' type='checkbox' value='0'>
+                <label class='checkbox-label' for='choice-0'>Football</label>
+            </li>
+            <li class='checkbox'>
+                <input class='checkbox-input' id='choice-1' name='choice' type='checkbox' value='1'>
+                <label class='checkbox-label' for='choice-1'>Basketball</label>
+            </li>
+            <li class='checkbox'>
+                <input class='checkbox-input' id='choice-2' name='choice' type='checkbox' value='2'>
+                <label class='checkbox-label' for='choice-2'>Volleyball</label>
+            </li>
+            <li class='checkbox'>
+                <input class='checkbox-input' id='choice-3' name='choice' type='checkbox' value='3'>
+                <label class='checkbox-label' for='choice-3'>Golf</label>
+            </li>
+            <li class='checkbox'>
+                <input class='checkbox-input' id='choice-4' name='choice' type='checkbox' value='4'>
+                <label class='checkbox-label' for='choice-4'>Swimming</label>
+            </li>
+        </ul>
     </div>
-</div>
+
+    <div class='field'>
+        <label class='label'>Favourite JS framework</label>
+        <ul class='options'>
+            <li class='option'>
+                <input class='option-input' id='option-0' name='option' type='radio' value='0'>
+                <label class='option-label' for='option-0'>React</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-1' name='option' type='radio' value='1'>
+                <label class='option-label' for='option-1'>Vue</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-2' name='option' type='radio' value='2'>
+                <label class='option-label' for='option-2'>Angular</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-3' name='option' type='radio' value='3'>
+                <label class='option-label' for='option-3'>Riot</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-4' name='option' type='radio' value='4'>
+                <label class='option-label' for='option-4'>Polymer</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-5' name='option' type='radio' value='5'>
+                <label class='option-label' for='option-5'>Ember</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-6' name='option' type='radio' value='6'>
+                <label class='option-label' for='option-6'>Meteor</label>
+            </li>
+            <li class='option'>
+                <input class='option-input' id='option-7' name='option' type='radio' value='7'>
+                <label class='option-label' for='option-7'>Knockout</label>
+            </li>
+        </ul>
+    </div> -->
+    <p class='field half'>
+      <input class='button' type='submit' value='Save'>
+    </p>
+</form>
+
 {% endblock task %}

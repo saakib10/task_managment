@@ -15,14 +15,17 @@
                     {% for task in tasks %}
                         {% if task.status.title == st.title %}
                             <li class="el">
-                                <div class="task blue">
-                                    <header>
-                                        <h3>{{ task.title }}</h3>
-                                    </header>
-                                    <div class="task-content">
-                                        {{ task.details }}
+                                <a href="{% url 'details' task.id %}">
+                                    <div class="task blue">
+                                        <header>
+                                            <h3>{{ task.title }}</h3>
+                                        </header>
+                                        <div class="task-content">
+                                            {{ task.details }}
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+                                
                             </li>
                         {% endif %}
                     {% endfor %}
